@@ -1,0 +1,67 @@
+# NerdTools FE — Redesign Walkthrough
+
+## What Changed
+
+A complete ground-up redesign of all 6 HTML pages and the shared CSS. Every file was rewritten.
+
+---
+
+## Before vs After
+
+### Landing Page
+````carousel
+![Before — oversized 5-line serif heading, broken trust cards with text overflow](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/landing_page_current_v2_1774860972137.png)
+<!-- slide -->
+![After — clean 2-line italic display, badge pills, clear CTA pair, icon trust cards](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/v2_landing_1774862238681.png)
+````
+
+### Login Page
+````carousel
+![Before — half the screen wasted on redundant step cards, giant serif heading](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/login_page_current_1774860973019.png)
+<!-- slide -->
+![After — centered auth card, minimal & focused, forgot password inline](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/v2_login_1774862248252.png)
+````
+
+### Dashboard
+````carousel
+![Before — bulky metric cards, filler sidebar, 3-column screening card grid](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/dashboard_page_current_1774860973534.png)
+<!-- slide -->
+![After — stat bar with icons, full-width child card, compact screening table](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/v2_dashboard_1774862257199.png)
+````
+
+### Add Child
+![After — 2-col form grid, requirements sidebar, consent block](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/v2_addchild_1774862267176.png)
+
+### Forgot Password
+![After — centered auth card matching login style, icon, single field](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/v2_forgotpassword_1774862277695.png)
+
+### Terms & Conditions
+![After — sticky TOC sidebar, anchor-linked sections](/home/cis-lab/.gemini/antigravity/brain/5f6bb7d7-b54d-43de-af29-d17d28202bc7/v2_terms_1774862288867.png)
+
+---
+
+## Key Design Changes
+
+| Area | Before | After |
+|---|---|---|
+| **Font** | Newsreader + Public Sans | Lora (display only) + Plus Jakarta Sans |
+| **Hero heading** | 5-line serif stacked, unreadable | 2-line italic display, readable at a glance |
+| **Trust cards** | 3-col overflow grid inside sidebar | Stacked icon cards, no overflow |
+| **Login layout** | 2-col with redundant step cards | Centered single-column auth card |
+| **Dashboard metrics** | Oversized cards with minimal info | Compact stat pills with icons |
+| **Screening records** | 3-col card grid (noisy) | Clean HTML table with status badges |
+| **Dashboard sidebar** | Filler "Screening Context" text | Removed; Add Child moved to nav |
+| **Forgot password** | Two-col form with giant heading | Centered card matching login |
+| **Terms** | Flat stacked sections | Sticky TOC + anchor-linked sections |
+| **Buttons** | Gradient OK, weak hierarchy | Teal primary + ghost secondary, clear hierarchy |
+| **Radius/shadows** | Over-rounded, excessive | Tighter, more product-like |
+
+## Files Modified
+
+- [shared-theme.css](file:///home/cis-lab/Angad%20Singh%20Ahuja/NerdTools%20FE/shared-theme.css) — complete rewrite (~750 lines → design system v2)
+- `NERD Tools Foundation.html` — landing
+- `NERD Tools Foundation_login.html` — login
+- `NERD Tools Foundation_dashboard.html` — dashboard
+- `NERD Tools Foundation_addchild.html` — add child
+- `NERD Tools Foundation_forgotpassword.html` — forgot password
+- `NERD Tools Foundation_terms.html` — terms
