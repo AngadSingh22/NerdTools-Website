@@ -1063,6 +1063,10 @@ select {
    === TERMS PAGE ===
    ------------------------------------------------------------------- */
 
+.terms-main {
+  padding: 0 4px;
+}
+
 .terms-grid {
   display: grid;
   grid-template-columns: 240px 1fr;
