@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard — NERD Tools Foundation</title>
+  <meta name="description" content="Your CLASS screening dashboard. Manage children, start screenings, and download reports.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef7fa">
+  <link rel="apple-touch-icon-precomposed" href="https://nerdtools.co.in/images/site/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./shared-theme.css">
+</head>
+<body>
+  <div class="page-shell">
+
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-logo" src="./NERD Tools Foundation_dashboard_files/logo_ntf.png" alt="NERD Tools Foundation logo">
+        <div class="brand-copy">
+          <div class="brand-name">NERD Tools Foundation</div>
+          <div class="brand-tagline">Cognitive Learning Ability Screening Score (CLASS)</div>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Dashboard navigation">
+        <span class="nav-link" style="cursor:default; color:var(--text-muted);">Angad Ahuja</span>
+        <a class="nav-link is-current" href="https://nerdtools.biodb.in/assessment/1.dashboard.php">Dashboard</a>
+        <a class="nav-link is-action" href="https://nerdtools.biodb.in/assessment/1.addchild.php">+ Add Child</a>
+        <a class="nav-link" href="https://nerdtools.biodb.in/assessment/1.logout.php" style="color:var(--text-faint);">Logout</a>
+      </nav>
+    </header>
+
+    <!-- Quick-stat bar -->
+    <div class="stat-bar">
+      <div class="stat-pill">
+        <div class="stat-icon" aria-hidden="true">🔑</div>
+        <div class="stat-text">
+          <div class="stat-value">2</div>
+          <div class="stat-label">Licenses available</div>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-icon stat-icon-sage" aria-hidden="true">👧</div>
+        <div class="stat-text">
+          <div class="stat-value">1</div>
+          <div class="stat-label">Child added</div>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-icon stat-icon-amber" aria-hidden="true">📋</div>
+        <div class="stat-text">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Screening sessions</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard body -->
+    <main class="dash-body">
+
+      <div class="child-card" id="child-card-961">
+
+        <!-- Child header -->
+        <div class="child-header">
+          <div class="child-info">
+            <p class="kicker">Child Record</p>
+            <h2 class="child-name">Angad Singh Ahuja</h2>
+            <div class="child-meta-row">
+              <span class="badge badge-neutral">Male</span>
+              <span class="badge badge-neutral">DoB: 22 Feb 2006</span>
+              <span class="badge badge-neutral">Class 12</span>
+              <span class="badge badge-neutral">3 screenings</span>
+            </div>
+          </div>
+
+          <div class="child-actions">
+            <form class="new-screening-form" method="post" action="https://nerdtools.biodb.in/assessment/1.dashboard.php">
+              <input type="hidden" name="cname" value="Angad Singh Ahuja">
+              <input type="hidden" name="cid" value="961">
+              <label class="muted" for="lang" style="white-space:nowrap;">CLASS Language:</label>
+              <select id="lang" name="lang">
+                <option value="1-AE">English</option>
+                <option value="2-AH">Hindi</option>
+              </select>
+              <input type="submit" id="new-screening-btn" value="+ New Screening">
+            </form>
+          </div>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="child-toolbar">
+          <p class="toolbar-note">Showing all screening sessions for this child. Download completed reports or resume incomplete sessions.</p>
+        </div>
+
+        <!-- Screening history table -->
+        <div class="screening-section">
+          <div class="screening-table-wrap">
+            <table class="screening-table" aria-label="Screening history for Angad Singh Ahuja">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Date &amp; Time</th>
+                  <th scope="col">Language</th>
+                  <th scope="col">Status</th>
+                  <th scope="col" style="text-align:right;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="muted-cell">1</td>
+                  <td>20 Mar 2026 &mdash; 6:11 PM</td>
+                  <td class="muted-cell">English</td>
+                  <td><span class="badge badge-success">Complete</span></td>
+                  <td class="actions-cell">
+                    <a class="btn btn-ghost btn-sm" href="https://nerdtools.biodb.in/assessment/reports/564455366817.pdf" target="_blank" rel="noopener noreferrer">Download Report</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="muted-cell">2</td>
+                  <td>20 Mar 2026 &mdash; 6:49 PM</td>
+                  <td class="muted-cell">Hindi</td>
+                  <td><span class="badge badge-warning">Incomplete</span></td>
+                  <td class="actions-cell">
+                    <a class="btn btn-ghost btn-sm" href="https://nerdtools.biodb.in/assessment/2.startscreening.php?auth=OTNFMi0wNkY4LUY1OTY&cid=565" target="_blank" rel="noopener noreferrer">Resume →</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="muted-cell">3</td>
+                  <td>20 Mar 2026 &mdash; 6:49 PM</td>
+                  <td class="muted-cell">English</td>
+                  <td><span class="badge badge-warning">Incomplete</span></td>
+                  <td class="actions-cell">
+                    <a class="btn btn-ghost btn-sm" href="https://nerdtools.biodb.in/assessment/2.startscreening.php?auth=NkM4Ni04MUI2LTYzQjk&cid=566" target="_blank" rel="noopener noreferrer">Resume →</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div><!-- /.child-card -->
+
+    </main>
+
+    <footer class="site-footer">
+      <p>© Nerds Tools Foundation &nbsp;|&nbsp; <a href="mailto:alert.nerdtools@yahoo.com">alert.nerdtools@yahoo.com</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>

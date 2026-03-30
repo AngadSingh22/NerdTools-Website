@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Child — NERD Tools Foundation</title>
+  <meta name="description" content="Add a new child to your CLASS screening account.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef7fa">
+  <link rel="apple-touch-icon-precomposed" href="https://nerdtools.co.in/images/site/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./shared-theme.css">
+</head>
+<body>
+  <div class="page-shell">
+
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-logo" src="./NERD Tools Foundation_files/logo_ntf.png" alt="NERD Tools Foundation logo">
+        <div class="brand-copy">
+          <div class="brand-name">NERD Tools Foundation</div>
+          <div class="brand-tagline">Cognitive Learning Ability Screening Score (CLASS)</div>
+        </div>
+      </div>
+      <nav class="site-nav" aria-label="Authenticated navigation">
+        <span class="nav-link" style="cursor:default; color:var(--text-muted);">Angad Ahuja</span>
+        <a class="nav-link" href="https://nerdtools.biodb.in/assessment/1.dashboard.php">Dashboard</a>
+        <a class="nav-link is-current" href="https://nerdtools.biodb.in/assessment/1.addchild.php">Add Child</a>
+        <a class="nav-link" href="https://nerdtools.biodb.in/assessment/1.logout.php" style="color:var(--text-faint);">Logout</a>
+      </nav>
+    </header>
+
+    <main class="form-page-grid">
+
+      <!-- MAIN FORM -->
+      <div class="form-main-card">
+        <p class="kicker">New Child Record</p>
+        <h1 class="headline">Add a Child</h1>
+        <p class="muted" style="margin-top:6px;">All fields are required unless stated otherwise. Child name and school accept letters only.</p>
+
+        <form name="addchild" method="post" action="https://nerdtools.biodb.in/assessment/1.addchild.php">
+          <input type="hidden" name="whoami" value="1">
+
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="childname">Child Full Name</label>
+              <input id="childname" type="text" name="childname"
+                     placeholder="e.g. Priya Sharma"
+                     required minlength="5" maxlength="100"
+                     pattern="[A-Za-z\s]+" title="Letters and spaces only">
+            </div>
+
+            <div class="field">
+              <label for="school">School Name</label>
+              <input id="school" type="text" name="school"
+                     placeholder="e.g. DPS RK Puram"
+                     required minlength="5" maxlength="100"
+                     pattern="[a-zA-Z0-9\s]+" title="Alphanumeric, no special characters">
+            </div>
+
+            <div class="field">
+              <label for="dob">Date of Birth</label>
+              <input id="dob" type="date" name="dob" required>
+            </div>
+
+            <div class="field">
+              <label for="gender">Gender</label>
+              <select id="gender" name="gender">
+                <option value="Male" selected>Male</option>
+                <option value="Female">Female</option>
+                <option value="Not Told">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="mobile">Parent / Guardian Mobile</label>
+              <input id="mobile" type="text" name="mobile"
+                     placeholder="10-digit mobile number"
+                     required pattern="[6789][0-9]{9}"
+                     title="Must be a valid 10-digit Indian mobile number">
+            </div>
+
+            <div class="field">
+              <label for="class">Class / Grade</label>
+              <input id="class" type="number" name="class"
+                     placeholder="1 – 12"
+                     required min="1" max="12"
+                     title="Enter a grade between 1 and 12">
+            </div>
+
+            <div class="field full">
+              <fieldset style="border:0; padding:0; margin:0;">
+                <legend style="font-size:0.875rem; font-weight:600; color:var(--text); margin-bottom:10px;">Assign Screening Language</legend>
+                <div class="radio-options">
+                  <label class="radio-option">
+                    <input type="radio" value="1-AE" name="assign"> English
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" value="2-AH" name="assign"> Hindi
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" value="0" name="assign" checked> Assign later from dashboard
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="field full">
+              <div class="checkbox-row">
+                <input id="addchild-consent" type="checkbox" name="consent" value="Yes" required title="Consent is mandatory to proceed.">
+                <label for="addchild-consent"><strong>Consent:</strong> Data collected during screening may be used for research and education purposes. All data belongs to NERD Tools and is governed by its data protection, privacy and usage policies. Data will not be shared with any third party and will be treated as confidential.</label>
+              </div>
+            </div>
+
+          </div><!-- /.form-grid -->
+
+          <div class="form-actions">
+            <input type="submit" id="addchild-submit" name="submit" value="Add Child">
+            <a class="btn btn-ghost" href="https://nerdtools.biodb.in/assessment/1.dashboard.php">← Back to Dashboard</a>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- SIDEBAR INFO -->
+      <aside class="info-sidebar" aria-label="Account context">
+
+        <div class="info-card">
+          <div class="info-card-title">Account Summary</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:14px;">
+            <div>
+              <div style="font-size:1.5rem; font-weight:800; color:var(--text); letter-spacing:-0.02em;">2</div>
+              <div class="muted" style="font-size:0.75rem;">Licenses</div>
+            </div>
+            <div>
+              <div style="font-size:1.5rem; font-weight:800; color:var(--text); letter-spacing:-0.02em;">1</div>
+              <div class="muted" style="font-size:0.75rem;">Child added</div>
+            </div>
+          </div>
+          <p class="muted" style="font-size:0.8rem; line-height:1.55;">Screening assignment is subject to license availability. If no license is free, assign later from the dashboard.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">Requirements</div>
+          <ul class="info-list">
+            <li>Child name — letters only, 5–100 characters</li>
+            <li>School — alphanumeric, 5–100 characters</li>
+            <li>Mobile — valid 10-digit Indian number</li>
+            <li>Grade — between 1 and 12</li>
+            <li>Consent checkbox must be ticked</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">After adding a child</div>
+          <ul class="info-list">
+            <li>Child appears in your dashboard list</li>
+            <li>You can start or assign a screening from the dashboard</li>
+            <li>Completed reports are downloadable from dashboard</li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>© Nerds Tools Foundation &nbsp;|&nbsp; <a href="mailto:alert.nerdtools@yahoo.com">alert.nerdtools@yahoo.com</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
